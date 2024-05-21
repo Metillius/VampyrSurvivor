@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class EnemyFollowPlayer : MonoBehaviour
+public class EnemyFollowPlayer : MonoBehaviour, IDamagable
 {
     public Transform player; 
     public float moveSpeed = 5f; 
-    public float stopDistance = 2f; 
+    public float stopDistance = 2f;
+    public float health;
 
     private void Start()
     {
@@ -19,5 +20,18 @@ public class EnemyFollowPlayer : MonoBehaviour
             Vector3 direction = (player.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }
+        
     }
+
+
+    public void takeDamage(float damage)
+    {
+        health = health- damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    
 }
