@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 4
+  moveSpeed: 3
   stopDistance: 2
   health: 1
 --- !u!61 &3187152057953040491
